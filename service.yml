@@ -1,0 +1,22 @@
+namespace: microserviceB
+
+public:
+  - web
+
+services:
+  web:
+    image: node:4
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/microserviceB
+    working_dir: /microserviceB
+    environment:
+      - "MICROSERVICEC_ENDPOINT=http://microserviceC"
+    command: [npm, start]
+
+dependencies:
+  - microserviceC
+
+setup:
+  - npm install
