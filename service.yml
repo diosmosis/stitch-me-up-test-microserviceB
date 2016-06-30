@@ -10,7 +10,7 @@ services:
       - .:/microserviceB
     working_dir: /microserviceB
     environment:
-      - "MICROSERVICEC_ENDPOINT=http://microserviceC:3000"
+      - "MICROSERVICEC_ENDPOINT=http://microservicec:3000"
     command: [npm, start]
 
 dependencies:
